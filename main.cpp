@@ -1,15 +1,26 @@
 
+#include "lmchandler.h"
+
 #include <QCoreApplication>
 #include <stdio.h>
-#include "Leap.h"
 
-using namespace Leap;
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    qInfo() << "HOLA MUNDO";
+    LMCHandler handler;
+    bool Initialized = false;
+    int count = 0;
+    do {
+        Initialized = handler.Initialize();
+        count = count + 1;
+    }while (!Initialized);
+
+    qInfo() << "Device Initialized: " << Initialized << count;
+
+    std::cout << "Press Enter to quit..." << std::endl;
+    std::cin.get();
 
     return a.exec();
 }
