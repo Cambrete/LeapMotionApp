@@ -6,23 +6,25 @@ CONFIG += c++17 cmdline
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += "C:\Users\Alejandro Cambronero\Documents\LeapMotionApp\LeapSDK\include"
-#INCLUDEPATH += "C:\Users\Alejandro Cambronero\Documents\LeapMotionApp\LeapSDK\lib\x64"
+INCLUDEPATH += C:\Users\cambr\Documents\code\LeapSDK\include
+#INCLUDEPATH += C:\Users\cambr\Documents\code\LeapSDK\lib\x64
 
-#LIBS += "C:\Users\Alejandro Cambronero\Documents\LeapMotionApp\LeapSDK\lib\x64\Leap.lib"
+#LIBS += "C:\Users\cambr\Documents\code\LeapSDK\lib\x64\Leap.lib"
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../LeapMotionApp/LeapSDK/lib/x64/ -lLeap
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../LeapMotionApp/LeapSDK/lib/x64/ -lLeap
-else:unix: LIBS += -L$$PWD/../../../LeapMotionApp/LeapSDK/lib/x64/ -lLeap
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../code/LeapSDK/lib/x64/ -lLeap
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../code/LeapSDK/lib/x64/ -lLeap
+else:unix: LIBS += -L$$PWD/../../code/LeapSDK/lib/x64/ -lLeap
 
-INCLUDEPATH += $$PWD/../../../LeapMotionApp/LeapSDK/lib/x64
-DEPENDPATH += $$PWD/../../../LeapMotionApp/LeapSDK/lib/x64
+INCLUDEPATH += $$PWD/../../code/LeapSDK/lib/x64
+DEPENDPATH += $$PWD/../../code/LeapSDK/lib/x64
 
 SOURCES += \
+        collectorworker.cpp \
         lmchandler.cpp \
         main.cpp
 
 HEADERS += \
+    collectorworker.h \
     lmchandler.h
 
 # Default rules for deployment.

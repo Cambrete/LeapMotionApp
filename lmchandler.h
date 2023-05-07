@@ -1,12 +1,17 @@
 #ifndef LMCHANDLER_H
 #define LMCHANDLER_H
 
+#include <QObject>
+#include <QThread>
+
+#include "collectorworker.h"
 #include "Leap.h"
 
 using namespace Leap;
 
-class LMCHandler
+class LMCHandler : public QObject
 {
+    Q_OBJECT
 public:
     LMCHandler();
     bool Initialize();
@@ -18,6 +23,9 @@ protected:
 
 private:
     Controller* controller = nullptr;
+
+    QThread *collectorThread = nullptr;
+    CollectorWorker collectorWorker;
 
 };
 

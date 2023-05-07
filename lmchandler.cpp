@@ -13,6 +13,6 @@ bool LMCHandler::Initialize()
 
 void LMCHandler::Configure()
 {
-
+    collectorWorker.moveToThread(collectorThread);
 }
 
