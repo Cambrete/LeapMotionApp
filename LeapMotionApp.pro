@@ -20,11 +20,13 @@ DEPENDPATH += $$PWD/../../code/LeapSDK/lib/x64
 
 SOURCES += \
         collectorworker.cpp \
+        dataprocessorworker.cpp \
         lmchandler.cpp \
         main.cpp
 
 HEADERS += \
     collectorworker.h \
+    dataprocessorworker.h \
     lmchandler.h
 
 # Default rules for deployment.

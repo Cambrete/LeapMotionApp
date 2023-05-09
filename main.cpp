@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     LMCHandler handler;
+
     bool Initialized = false;
     int count = 0;
     do {
